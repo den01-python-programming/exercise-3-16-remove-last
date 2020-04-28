@@ -1,6 +1,15 @@
 import pytest
-import src.exercise
+from src.exercise import remove_last
 
-def test_exercise():
-    #implement tests here
-    assert 0 == 0
+def test_exercise(capsys):
+    strings = ["First","Second","Third"]
+
+    remove_last(strings)
+
+    assert strings == ["First","Second"]
+
+    strings = []
+
+    remove_last(strings)
+
+    assert strings == []
